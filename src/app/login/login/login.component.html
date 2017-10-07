@@ -1,0 +1,12 @@
+<section class="login">
+	<form class="login-form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+		<h1>Welcome on Apollo Admin</h1>
+
+			<input  class="login-input" type="text" placeholder="Login" name="login" [(ngModel)]="login.login">
+
+			<input  class="login-input" type="password" placeholder="Password"  name="password" [(ngModel)]="login.password">
+
+			<button class="login-submit" (click)="onLogMe()">Log in</button>
+			{{clickMessage}}
+	</form>
+</section>
