@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,8 @@ export class LoginComponent implements OnInit {
   	password :''
   }
 
+  token ;
+
   results = [];
 
   constructor(private http: HttpClient){}
@@ -24,15 +27,24 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){ 
-  	this.submitted = true; 
+  onSubmit(){
+  	this.submitted = true;
 
-  	let token = this.http.post('http://localhost/Blog_Sf3/blog/web/app_dev.php/auth-tokens.json', this.login).subscribe(resp => {
-    	// Read the result field from the JSON response.
-    	return resp;
-    });
+    let parameters = new HttpParams();
 
-    console.log(token);
+    parameters.set('login',this.login.login)
+              .set('password', this.login.password);
+
+  	this.http.post('http://localhost/Blog_Sf3/blog/web/app_dev.php/auth-tokens.json', this.login)
+             .subscribe(
+               data => {
+                 this.token = data;
+               },
+               err => {
+                console.log(err);
+                this.clickMessage = 'Bad login or password !';
+              }
+            );
   }
 
   onLogMe(){
