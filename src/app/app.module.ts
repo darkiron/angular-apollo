@@ -9,11 +9,21 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login/login.component';
+import { ArticleComponent } from './article/article.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 const appRoutes: Routes = [
 	{
 		path: 'login',
 		component: LoginComponent
+	},
+	{
+		path: 'articles',
+		component: ArticlesComponent
+	},
+	{
+		path: 'article',
+		component: ArticleComponent
 	}
 ];
 
@@ -21,7 +31,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ArticleComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,

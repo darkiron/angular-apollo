@@ -1,0 +1,45 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+	align-items:center;
+  padding-top: 15px!important;
+}
+
+form{
+  border : 1px solid #a9a9a9;
+  width: 75%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  margin:auto;
+}
+
+form .input {
+  height: 35px;
+  margin:15px;
+  width: 100%;
+}
+
+form textarea.textarea{
+  width: 100%;
+  height: 150px;
+  margin:15px;
+}
+
+form button{
+  height: 35px;
+  margin:15px;
+  width: 15%;
+  background-color: #902016;
+	color: #d3c1be;
+  border:none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+form button:hover{
+	background-color: #872326;
+}

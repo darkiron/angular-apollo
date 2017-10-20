@@ -1,0 +1,11 @@
+
+<form>
+  <h2>Add Article </h2>
+  <input  class="input" type="text" placeholder="Tittle" name="title" [(ngModel)]="article.title">
+  <textarea class="textarea" type="text" placeholder="Description" name="description" [(ngModel)]="article.description"></textarea>
+  <input  class="input" type="text" placeholder="SOE description" name="metadescription" [(ngModel)]="article.metadescription">
+  <input  class="input" type="text" placeholder="Category" name="category" [(ngModel)]="article.category">
+  <input  class="input" type="text" placeholder="Thumb" name="thumb" [(ngModel)]="article.thumb">
+
+  <button (click)="onSubmit()">Save</button>
+</form>

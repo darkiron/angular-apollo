@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   results = [];
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient,private router: Router){}
 
   ngOnInit() {
   }
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
              .subscribe(
                data => {
                  this.token = data;
+                 this.router.navigate(['/articles']);
                },
                err => {
                 console.log(err);
